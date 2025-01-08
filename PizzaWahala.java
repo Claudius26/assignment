@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class PizzaWahala{
+public class PizzaWahala
+{
 
 	public static void main(String... args){
 
@@ -9,24 +10,30 @@ public class PizzaWahala{
 	Scanner input = new Scanner(System.in);
 
 	System.out.printf("%n%n%s","How many guests are you recieving? ");
-	int numberOfGuest = input.nextInt();
+	double numberOfGuest = (int)input.nextDouble();
+
+	while(numberOfGuest < 0)
+	{
+
+		System.out.print("Please enter number of guest");
+		numberOfGuest = input.nextInt();
+
+	}
 
 	System.out.printf("%n%s", "What type of pizza you want? ");
-	String pizzaType = input.next();
-
-	pizzaType = pizzaType.replaceAll("\\s", "").toLowerCase();
+	String pizzaType = input.next().toLowerCase();
 
 	switch(pizzaType){
 		case "sapasize": System.out.printf("%s", "How many box of pizza you want to buy? ");
-				 int numberOfBox = input.nextInt();
+				 double numberOfBox = input.nextDouble();
 				 int slices = 4;
-				 int pricePerBox = 2500;
+				 double pricePerBox = 2500;
 				 
-				 int totalSlice = numberOfBox * slices;
+				 double totalSlice = numberOfBox * slices;
 
-				 int remainingSlice = totalSlice - numberOfGuest;
+				 double remainingSlice = totalSlice - numberOfGuest;
 
-				 int amount = pricePerBox * numberOfBox;
+				 double amount = pricePerBox * numberOfBox;
 
 				 System.out.print("The remaining slice of pizza that will be left is " + remainingSlice);
 
@@ -34,15 +41,15 @@ public class PizzaWahala{
 			break;
 
 		case "smallmoney": System.out.printf("%s", "How many box of pizza you want to buy? ");
-				 int numberOfBoxSmallMoney = input.nextInt();
+				 double numberOfBoxSmallMoney = input.nextDouble();
 				 int slicesSmallMoney = 6;
-				 int pricePerBoxSmallMoney = 2900;
+				 double pricePerBoxSmallMoney = 2900;
 				 
-				 int totalSliceSmallMoney = numberOfBoxSmallMoney * slicesSmallMoney;
+				 double totalSliceSmallMoney = numberOfBoxSmallMoney * slicesSmallMoney;
 
-				 int remainingSliceSmallMoney = totalSliceSmallMoney - numberOfGuest;
+				 double remainingSliceSmallMoney = totalSliceSmallMoney - numberOfGuest;
 
-				 int amountSmallMoney = pricePerBoxSmallMoney * numberOfBoxSmallMoney;
+				 double amountSmallMoney = pricePerBoxSmallMoney * numberOfBoxSmallMoney;
 
 				 System.out.print("The remaining slice of pizza that will be left is " + remainingSliceSmallMoney);
 
@@ -50,15 +57,15 @@ public class PizzaWahala{
 			break;
 
 		case "Bigboys": System.out.printf("%s", "How many box of pizza you want to buy? ");
-				 int numberOfBoxForBigBoys = input.nextInt();
+				 double numberOfBoxForBigBoys = input.nextDouble();
 				 int sliceOfBigBoys = 8;
-				 int pricePerBoxOfBigBoys = 4000;
+				 double pricePerBoxOfBigBoys = 4000;
 				 
-				 int totalSliceOfBigBoys = numberOfBoxForBigBoys * sliceOfBigBoys;
+				 double totalSliceOfBigBoys = numberOfBoxForBigBoys * sliceOfBigBoys;
 
-				 int remainingSliceOfBigBoys = totalSliceOfBigBoys - numberOfGuest;
+				 double remainingSliceOfBigBoys = totalSliceOfBigBoys - numberOfGuest;
 
-				 int amountBigBoys = pricePerBoxOfBigBoys * numberOfBoxForBigBoys;
+				 double amountBigBoys = pricePerBoxOfBigBoys * numberOfBoxForBigBoys;
 
 				 System.out.print("The remaining slice of pizza that will be left is " + remainingSliceOfBigBoys);
 
@@ -66,21 +73,23 @@ public class PizzaWahala{
 			break;
 
 		case "odogwu": System.out.printf("%s", "How many box of pizza you want to buy? ");
-				 int numberOfBoxOdogwu = input.nextInt();
+				 double numberOfBoxOdogwu = input.nextDouble();
 				 int slicesOfOdogwu = 12;
-				 int pricePerBoxOfOdogwu = 5200;
+				 double pricePerBoxOfOdogwu = 5200;
 				 
-				 int totalSliceOfOdogwu = numberOfBoxOdogwu * slicesOfOdogwu;
+				 double totalSliceOfOdogwu = numberOfBoxOdogwu * slicesOfOdogwu;
 
-				 int remainingSliceOfOdogwu = totalSliceOfOdogwu - numberOfGuest;
+				 double remainingSliceOfOdogwu = totalSliceOfOdogwu - numberOfGuest;
 
-				 int amountOdogwu = pricePerBoxOfOdogwu * numberOfBoxOdogwu;
+				 double amountOdogwu = pricePerBoxOfOdogwu * numberOfBoxOdogwu;
 
 				 System.out.print("The remaining slice of pizza that will be left is " + remainingSliceOfOdogwu);
 
 				System.out.printf("\n%s %d", "You are paying ", amountOdogwu);
 			break;
 
+		default: System.out.print("Please enter type of pizza to purchase");
+			break;
 
 	}
 
